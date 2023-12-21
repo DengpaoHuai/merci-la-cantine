@@ -1,8 +1,10 @@
-@import "node_modules/bootstrap/scss/bootstrap";
-
-$primary: #f00;
+$primary: rgb(255, 0, 234);
 $secondary: #0f0;
 $tertiary: #00f;
+
+@import "node_modules/bootstrap/scss/bootstrap";
+
+
 
 // Personnalisation des variables si nécessaire
 $grid-columns: 12;
