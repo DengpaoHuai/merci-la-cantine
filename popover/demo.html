@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Démonstration Popover Bootstrap 5.2</title>
+    <!-- CDN Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="container mt-5">
+      <h1>Démonstration de Popover avec Bootstrap 5.2</h1>
+
+      <!-- Bouton pour un popover simple -->
+      <button
+        type="button"
+        class="btn btn-primary"
+        data-bs-toggle="popover"
+        title="Titre Popover"
+        data-bs-content="Contenu du Popover."
+      >
+        Popover simple
+      </button>
+
+      <!-- Bouton pour un popover avec HTML -->
+      <button
+        type="button"
+        class="btn btn-secondary"
+        data-bs-toggle="popover"
+        title="Popover HTML"
+        data-bs-html="true"
+        data-bs-content="<em>Contenu</em> <u>HTML</u> <b>intégré</b>."
+      >
+        Popover HTML
+      </button>
+
+      <!-- Bouton pour un popover à droite -->
+      <button
+        type="button"
+        class="btn btn-success"
+        data-bs-toggle="popover"
+        data-bs-placement="right"
+        title="À droite"
+        data-bs-content="Popover sur le côté droit."
+      >
+        Popover à droite
+      </button>
+
+      <!-- Bouton pour un popover à gauche -->
+      <button
+        type="button"
+        class="btn btn-danger"
+        data-bs-toggle="popover"
+        data-bs-placement="left"
+        title="À gauche"
+        data-bs-content="Popover sur le côté gauche."
+      >
+        Popover à gauche
+      </button>
+    </div>
+
+    <!-- CDN Bootstrap JS Bundle (inclut Popper.js) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+      // Initialisation des popovers
+      var popoverTriggerList = [].slice.call(
+        document.querySelectorAll('[data-bs-toggle="popover"]')
+      );
+      var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
+        return new bootstrap.Popover(popoverTriggerEl);
+      });
+
+      // Fonction pour fermer un popover spécifique
+      function closePopover(selector) {
+        var popoverElement = document.querySelector(selector);
+        var popoverInstance = bootstrap.Popover.getInstance(popoverElement);
+        if (popoverInstance) {
+          popoverInstance.hide();
+        }
+      }
+
+      // Fonction pour fermer tous les popovers
+      function closeAllPopovers() {
+        popoverList.forEach(function (popover) {
+          popover.hide();
+        });
+      }
+
+      // Fermer les popovers lorsque l'on clique à l'extérieur
+      document.addEventListener("click", function (event) {
+        popoverList.forEach(function (popover) {
+          var target = event.target;
+          var triggerElement = popover._element;
+
+          if (!triggerElement.contains(target)) {
+            popover.hide();
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,32 @@
+@import "node_modules/bootstrap/scss/bootstrap";
+
+$primary: #f00;
+$secondary: #0f0;
+$tertiary: #00f;
+
+// Personnalisation des variables si nécessaire
+$grid-columns: 12;
+$grid-gutter-width: 30px;
+
+// Utilisation des mixins pour créer des styles personnalisés
+.my-custom-row {
+  @include make-row($gutter: $grid-gutter-width);
+}
+
+
+.my-custom-col {
+    @include make-col-ready();
+    @include make-col($size: 4, $columns: $grid-columns); // Prend 4 des 12 colonnes
+  }
+  
+  .my-custom-col-auto {
+    @include make-col-auto();
+  }
+  
+  .my-offset-col {
+    @include make-col-offset(3, $columns: $grid-columns); // Décalage de 3 colonnes
+  }
+  
+  .my-row-cols {
+    @include row-cols(3); // 3 colonnes par ligne
+  }

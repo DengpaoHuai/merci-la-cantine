@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exemples Bootstrap 5.2</title>
+    <!-- CDN Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="container mt-5">
+      <h1>Exemples Bootstrap 5.2</h1>
+
+      <!-- Clearfix -->
+      <div class="clearfix">
+        <div class="float-start bg-primary text-white p-2">
+          Flottant à gauche
+        </div>
+        <div class="float-end bg-secondary text-white p-2">
+          Flottant à droite
+        </div>
+      </div>
+
+      <!-- Color & Background -->
+      <div class="p-3 mb-2 bg-success text-white">Texte sur fond vert</div>
+
+      <!-- Colored Links -->
+      <a href="#" class="text-info">Lien coloré</a>
+
+      <!-- Focus Ring -->
+      <a href="#" class="focus-ring">Lien avec focus ring</a>
+
+      <!-- Icon Link (utiliser Bootstrap Icons ou une autre bibliothèque d'icônes) -->
+      <!-- <i class="bi bi-link"></i> (Nécessite le CDN Bootstrap Icons) -->
+
+      <!-- Position -->
+      <div class="position-relative bg-light p-3">
+        <div class="position-absolute top-0 start-0 bg-warning p-2">
+          Position absolue
+        </div>
+      </div>
+
+      <!-- Ratio (pour les éléments incorporés comme les vidéos) -->
+      <div class="ratio ratio-16x9">
+        <iframe
+          src="https://www.youtube.com/embed/zpOULjyy-n8?rel=0"
+          allowfullscreen
+        ></iframe>
+      </div>
+
+      <!-- Stacks -->
+      <div class="d-grid gap-2">
+        <button class="btn btn-primary" type="button">Bouton 1</button>
+        <button class="btn btn-secondary" type="button">Bouton 2</button>
+      </div>
+
+      <!-- Stretched Link -->
+      <div class="p-3 mb-2 bg-danger position-relative">
+        <a href="#" class="stretched-link text-white">Lien étiré</a>
+      </div>
+
+      <!-- Text Truncation -->
+      <div class="text-truncate" style="max-width: 150px">
+        Ce texte est tronqué si trop long pour la boîte.
+      </div>
+
+      <!-- Vertical Rule -->
+      <div class="d-flex align-items-center">
+        <div>Texte à gauche</div>
+        <div class="vr"></div>
+        <div>Texte à droite</div>
+      </div>
+
+      <!-- Visually Hidden -->
+      <div class="visually-hidden">
+        Ce texte est caché visuellement mais reste accessible pour les lecteurs
+        d'écran.
+      </div>
+    </div>
+
+    <!-- CDN Bootstrap JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Démonstration des propriétés CSS modernes</title>
+    <style>
+      /* Container Queries */
+      .container {
+        width: 300px;
+        resize: horizontal;
+        overflow: auto;
+        border: 1px solid black;
+        padding: 10px;
+      }
+      @container (width > 500px) {
+        .container-child {
+          color: blue;
+        }
+      }
+
+      /* Focus-visible */
+      .focus-visible-demo input:focus-visible {
+        outline: 2px solid blue;
+      }
+
+      /* :has() Selector */
+      .has-selector-demo:has(> .special) {
+        background-color: lightgrey;
+      }
+
+      /* Subgrid */
+      .grid-parent {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+      }
+      .subgrid {
+        display: grid;
+        grid-row: auto / span 2;
+        grid-template-columns: subgrid;
+      }
+
+      /* Accent-Color */
+      .accent-color-demo input[type="checkbox"],
+      .accent-color-demo input[type="radio"],
+      .accent-color-demo input[type="range"],
+      .accent-color-demo progress {
+        accent-color: green;
+      }
+
+      /* Individual Transform Properties */
+      .transform-demo:hover {
+        rotate: 45deg;
+        scale: 1.5;
+      }
+
+      /* Cascade Layers */
+      @layer base, components, themes;
+      @layer base {
+        .layer-demo {
+          color: grey;
+        }
+      }
+      @layer components {
+        .layer-demo {
+          color: red;
+        }
+      }
+      @layer themes {
+        .layer-demo {
+          color: green;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Démonstration des propriétés CSS modernes</h1>
+
+    <!-- Container Queries -->
+    <div class="container">
+      <p class="container-child">Redimensionnez-moi!</p>
+    </div>
+
+    <!-- Focus-visible -->
+    <div class="focus-visible-demo">
+      <input type="text" placeholder="Tab pour me focus" />
+    </div>
+
+    <!-- :has() Selector -->
+    <div class="has-selector-demo">
+      <div class="special">Je change le parent!</div>
+    </div>
+
+    <!-- Subgrid -->
+    <div class="grid-parent">
+      <div class="subgrid">
+        <!-- Eléments du subgrid -->
+      </div>
+      <!-- Autres éléments du grid-parent -->
+    </div>
+
+    <!-- Accent-Color -->
+    <div class="accent-color-demo">
+      <input type="checkbox" checked />
+      <input type="radio" name="radio" checked />
+      <input type="range" />
+      <progress max="100" value="70"></progress>
+    </div>
+
+    <!-- Individual Transform Properties -->
+    <div class="transform-demo">Hover sur moi!</div>
+
+    <!-- Cascade Layers -->
+    <div class="layer-demo">Je suis stylisé par les layers!</div>
+  </body>
+</html>

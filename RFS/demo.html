@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Bootstrap CSS CDN -->
+    <link
+      href="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1CmrxMRARb6aLqgBO7yyAxj+K+e1Cj5cxILF2CZ9pLd9agVuF6R3H40CzS2YQV0h"
+      crossorigin="anonymous"
+    />
+    <title>Exemple RFS avec Bootstrap</title>
+    <style>
+      /* Exemple de classe personnalisée avec RFS */
+      .exemple-rfs {
+        font-size: 1.25rem; /* Taille de base */
+      }
+
+      /* Exemple de media queries pour simuler RFS */
+      @media (max-width: 992px) {
+        .exemple-rfs {
+          font-size: 1.1rem; /* Taille ajustée pour les écrans plus petits */
+        }
+      }
+
+      @media (max-width: 576px) {
+        .exemple-rfs {
+          font-size: 1rem; /* Taille encore plus petite pour les écrans très petits */
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <h1 class="exemple-rfs">Ceci est un titre avec RFS</h1>
+    <p class="fs-5">
+      Ceci est un paragraphe utilisant les classes de taille de texte Bootstrap.
+    </p>
+  </body>
+</html>
